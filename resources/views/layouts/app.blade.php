@@ -24,11 +24,16 @@
         </div>
     </nav>
 
-    <div class="container mx-auto mt-8 p-4">
-        @yield('content')
+    <body>
+    <div class="dashboard">
+        @include('components.sidebar')
+        <main class="main-content">
+            @yield('content') 
+        </main>
     </div>
+</body>
 
-    @stack('scripts')
+@yield('scripts')
 
 </body>
 </html>

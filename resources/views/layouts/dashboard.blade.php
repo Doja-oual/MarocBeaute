@@ -9,20 +9,7 @@
 </head>
 <body>
     <div class="dashboard">
-        <aside class="sidebar">
-            <div class="logo">
-                <h1>MOROCCAN<br>COSMETICS</h1>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item active"><i>📊</i> <a href="{{ route('dashboard') }}">Tableau de bord</a></li>
-                <li class="nav-item"><i>📦</i> <a href="">Produits</a></li>
-                <li class="nav-item"><i>🛒</i> <a href="">Commandes</a></li>
-                <li class="nav-item"><i>👥</i> <a href="">Clients</a></li>
-                <li class="nav-item"><i>👨‍🎨</i> <a href="">Artisans</a></li>
-                <li class="nav-item"><i>📝</i> <a href="">Blog</a></li>
-                <li class="nav-item"><i>⚙️</i> <a href="">Paramètres</a></li>
-            </ul>
-        </aside>
+        @include('layouts.sidebar')
 
         <main class="main-content">
             <div class="header">

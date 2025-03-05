@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmétiques Marocains Traditionnels</title>
+    <style>
+        :root {
+            --beige-background: #E6D8C3;
+            --gold-accent: #B8A078;
+            --dark-green: #4A5F3A;
+            --text-color: #4A4A4A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--beige-background);
+            color: var(--text-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(230, 216, 195, 0.8);
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 5%;
+        }
+
+        .hero-content {
+            width: 40%;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background-color: var(--gold-accent);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #9A8666;
+        }
+
+        .hero-image {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-categories {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 5%;
+            background-color: rgba(230, 216, 195, 0.5);
+        }
+
+        .category {
+            text-align: center;
+            width: 20%;
+        }
+
+        .category img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .category h3 {
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Moroccan Cosmetics</div>
+        <div class="navbar-links">
+            <a href="#home">Accueil</a>
+            <a href="#products">Produits</a>
+            <a href="#traditional">Traditionnel</a>
+            <a href="#modern">Moderne</a>
+            <a href="#about">À propos</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="user-actions">
+            <a href="#login">Connexion</a>
+            <a href="#cart">Panier</a>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Cosmétiques Marocains</h1>
+            <p>
+                Découvrez l'alliance parfaite entre tradition artisanale et innovation moderne. 
+                Nos produits de beauté naturels capturent l'essence des trésors cosmétiques marocains.
+            </p>
+            <a href="#products" class="cta-button">Découvrir Maintenant</a>
+        </div>
+        <div class="hero-image">
+            <img src="/api/placeholder/500/600" alt="Produits cosmétiques marocains" />
+        </div>
+    </section>
+
+    <section class="product-categories">
+        <div class="category">
+            <img src="/api/placeholder/200/200" alt="Produits Traditionnels" />
+            <h3>Traditionnel</h3>
+            <p>Découvrez nos produits authentiques inspirés des traditions ancestrales.</p>
+        </div>
+        <div class="category">
+            <img src="/api/placeholder/200/200" alt="Produits Modernes" />
+            <h3>Moderne</h3>
+            <p>Une approche contemporaine de la beauté naturelle.</p>
+        </div>
+        <div class="category">
+            <img src="/api/placeholder/200/200" alt="Kits Combinés" />
+            <h3>Kits Combinés</h3>
+            <p>L'harmonie parfaite entre tradition et innovation.</p>
+        </div>
+    </section>
+</body>
+</html>
