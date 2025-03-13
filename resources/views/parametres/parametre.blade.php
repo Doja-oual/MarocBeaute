@@ -1,15 +1,9 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Tableau de bord')
+@section('title', 'Paramètres du compte')
 
 @section('content')
-            <div class="header">
-                <h2>Paramètres du compte</h2>
-                <div class="user-info">
-                    <img src="/api/placeholder/40/40" alt="Admin"/>
-                    <span>Admin</span>
-                </div>
-            </div>
+           
             
             <div class="dashboard-stats">
                 <div class="stat-card">

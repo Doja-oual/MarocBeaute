@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Tableau de bord')
+@section('title', 'Artisan')
 
 @section('content')
             <div class="artisans-summary">

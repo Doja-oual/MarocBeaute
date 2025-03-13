@@ -1,16 +1,9 @@
  
  @extends('layouts.dashboard')
 
-@section('title', 'Tableau de bord')
+@section('title', 'Gestion des Clients')
 
 @section('content')
-            <div class="header">
-                <h2>Gestion des Clients</h2>
-                <div class="user-info">
-                    <img src="/api/placeholder/40/40" alt="Admin"/>
-                    <span>Admin</span>
-                </div>
-            </div>
             
             <div class="clients-summary">
                 <div class="summary-card">

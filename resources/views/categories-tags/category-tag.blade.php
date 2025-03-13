@@ -1,15 +1,9 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Catégories et Tags')
+@section('title', 'Gestion des Catégories et Tags')
 
 @section('content')
-    <div class="header">
-        <h2>Gestion des Catégories et Tags</h2>
-        <div class="user-info">
-            <img src="/api/placeholder/40/40" alt="Admin"/>
-            <span>Admin</span>
-        </div>
-    </div>
+    
 
     <div class="action-buttons">
         <button class="btn btn-primary" id="add-item-btn">
