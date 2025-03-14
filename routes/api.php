@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/forgot-password', [ResetPasswordController::class, 'forgotPassword']);
+Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']);
 
-
-
-Route::post('auth/register',[UserController::class,'createUser']);
-Route::post('/auth/login',[UserController::class,'loginUser']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout']);
+});

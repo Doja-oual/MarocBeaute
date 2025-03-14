@@ -1,0 +1,226 @@
+
+:root {
+    --beige-background: #E6D8C3;
+    --gold-accent: #B8A078;
+    --dark-green: #4A5F3A;
+    --text-color: #4A4A4A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--beige-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%"><defs><linearGradient id="simpleGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23F5E6D3;stop-opacity:1" /><stop offset="100%" style="stop-color:%23E6D8C3;stop-opacity:1" /></linearGradient></defs><rect width="100%" height="100%" fill="url(%23simpleGradient)"/></svg>');
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(184, 160, 120, 0.1) 20px,
+        rgba(184, 160, 120, 0.1) 40px
+    );
+    z-index: -1;
+    animation: backgroundMove 10s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.login-logo {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-logo img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-green);
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--gold-accent);
+    border-radius: 8px;
+    background-color: rgba(230, 216, 195, 0.2);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--dark-green);
+    box-shadow: 0 0 10px rgba(74, 95, 58, 0.2);
+}
+
+.password-forgot {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.password-forgot a {
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--gold-accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--dark-green);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(74, 95, 58, 0.3);
+}
+
+.register-link {
+    margin-top: 25px;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.register-link a {
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-login {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-login {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-btn {
+    width: 180px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Style spécifique pour Gmail */
+.social-btn.gmail {
+    background-color: #fff;
+    color: #4285F4;
+    border: 2px solid #4285F4;
+}
+
+.social-btn.gmail:hover {
+    background-color: #4285F4;
+    color: white;
+}
+
+/* Style spécifique pour Facebook */
+.social-btn.facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+.social-btn.facebook:hover {
+    background-color: #2d4474;
+}
+
+/* Style spécifique pour Instagram */
+.social-btn.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.social-btn.instagram:hover {
+    opacity: 0.9;
+}
+
+/* Style de surbrillance */
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.2);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.social-btn:hover::before {
+    opacity: 1;
+}

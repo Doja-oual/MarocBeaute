@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ArtisanController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryTagController;
 use App\Http\Controllers\ClientController;
@@ -15,17 +18,14 @@ use App\Http\Controllers\ReviewController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
-// Route::get('/dashboard/orders', function () {
-//     return view('commandes.orders');
-// })->name('dashboard.orders');
+
 Route::get('/orders', [OrdersController::class, 'index'])->name('commandes.orders');
 Route::get('/client', [ClientController::class, 'index'])->name('client.client');
 Route::get('/products', [ProductController::class, 'index'])->name('produits.produit');
@@ -37,7 +37,14 @@ Route::get('/paiements', [PaymentController::class, 'index'])->name('paiements.p
 Route::get('/livraisons', [DeliveryController::class, 'index'])->name('livraisons.livraison');
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.review');
 
-
-
+Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');
+Route::post('/login',[LoginController::class,'login'])->name('login');
+Route::post('/logout',[LoginController::class,'logout'])->name('logout');
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register'); 
+Route::post('/register',[RegisterController::class,'register'])->name('register');
+Route::get('/forgot-password', [ResetPasswordController::class, 'showForgotPasswordForm'])->name('password.forgot.form');
+Route::post('/forgot-password', [ResetPasswordController::class, 'forgotPassword'])->name('password.forgot');
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetPasswordForm'])->name('password.reset.form');
+Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword'])->name('password.reset');
 
 
