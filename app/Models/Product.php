@@ -27,7 +27,7 @@ class Product extends Model
      }
      public function users_cart(){
          return $this->belongsToMany(User::class,'carts');
-         
+          
 
      }
 }
