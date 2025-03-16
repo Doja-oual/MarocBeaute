@@ -14,12 +14,17 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description')->nullable();
-            $table->decimal('price', 10, 2);
-            $table->integer('stock')->default(0);
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
-            $table->foreignId('sub_category_id')->nullable()->constrained('sub_categories')->onDelete('cascade');
-            $table->string('image')->nullable();
+            $table->text('description');
+            $table->double('price');
+            $table->double('discounted_price');
+            $table->string('reference')->unique();
+            $table->text('image');
+            $table->integer('qte');
+            $table->integer('qte_order');
+            $table->boolean('in_stock');
+            $table->bigInteger('id_sub_catg')->unsigned();
+            $table->foreign('id_sub_catg')->references('id')->on('sub_categories');
+
             $table->timestamps();
         });
     }
