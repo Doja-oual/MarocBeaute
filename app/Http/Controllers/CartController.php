@@ -12,7 +12,7 @@ class CartController extends Controller
     public function index($userid){
         try{
             $user=User::findOrFail($userid);
-            $carts=Cart::where('user_id',$user->$id)->with('product.sub_category.category')->get();
+            $carts=Cart::where('user_id',$user->id)->with('product.sub_category.category')->get();
              return view('cart.index',['carts'=>$carts,'user'=>$user]);
 
         }catch(Exception $e){
