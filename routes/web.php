@@ -27,12 +27,12 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 
 Route::get('/orders', [OrdersController::class, 'index'])->name('commandes.orders');
-Route::get('/client', [ClientController::class, 'index'])->name('client.client');
+// Route::get('/client', [ClientController::class, 'index'])->name('client.client');
 Route::get('/products', [ProductController::class, 'index'])->name('produits.produit');
 Route::get('/parametre', [ ParametreController::class, 'index'])->name('parametres.parametre');
-Route::get('/Blog', [ BlogController::class, 'index'])->name('Blog.bloge');
-Route::get('/Artisan', [ ArtisanController::class, 'index'])->name('Artisans.artisan');
-Route::get('/categories-tags', [CategoryTagController::class, 'index'])->name('categories-tags.category-tag');
+// Route::get('/Blog', [ BlogController::class, 'index'])->name('Blog.bloge');
+// Route::get('/Artisan', [ ArtisanController::class, 'index'])->name('Artisans.artisan');
+// Route::get('/categories-tags', [CategoryTagController::class, 'index'])->name('categories-tags.category-tag');
 Route::get('/paiements', [PaymentController::class, 'index'])->name('paiements.paiement');
 Route::get('/livraisons', [DeliveryController::class, 'index'])->name('livraisons.livraison');
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.review');
