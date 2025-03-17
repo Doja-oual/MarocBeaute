@@ -3,7 +3,7 @@ namespace App\Http\Repositories;
 
 interface ProductRepositorieInterface {
     public function  getById($id);
-    public function getInfoProduct($id,$user_id);
+    public function getInfoProduct($id,$userId);
 
     public function  getAll();
 
