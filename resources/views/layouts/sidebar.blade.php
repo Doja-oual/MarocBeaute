@@ -10,7 +10,7 @@
         <i>📦</i> <a href="{{ route('produits.produit') }}">Produits</a>
     </li>
     <li class="nav-item {{ request()->is('categories-tags*') ? 'active' : '' }}">
-        <i>🏷️</i> <a href="{{ route('categories-tags.category-tag') }}">Catégories et Tags</a>
+        <i>🏷️</i> <a href="{{ route('categories.category') }}">Catégories </a>
     </li>
     <li class="nav-item {{ request()->is('commandes*') ? 'active' : '' }}">
         <i>🛒</i> <a href="{{ route('commandes.orders') }}">Commandes</a>
@@ -25,13 +25,13 @@
         <i>👥</i> <a href="{{ route('client.client') }}">Clients</a>
     </li>
     <li class="nav-item {{ request()->is('Artisans*') ? 'active' : '' }}">
-        <i>👨‍🎨</i> <a href="{{ route('Artisans.artisan') }}">Artisans</a>
+        <i>👨‍🎨</i> <a href="#">Artisans</a>
     </li>
     <li class="nav-item {{ request()->is('reviews*') ? 'active' : '' }}">
         <i>⭐</i> <a href="{{ route('reviews.review') }}">Avis</a>
     </li>
     <li class="nav-item {{ request()->is('Blog*') ? 'active' : '' }}">
-        <i>📝</i> <a href="{{ route('Blog.bloge') }}">Blog</a>
+        <i>📝</i> <a href="#">Blog</a>
     </li>
     <li class="nav-item {{ request()->is('parametres*') ? 'active' : '' }}">
         <i>⚙️</i> <a href="{{ route('parametres.parametre') }}">Parametres</a>

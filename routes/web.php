@@ -5,7 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CategoryTagController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
@@ -18,6 +18,9 @@ use App\Http\Controllers\ReviewController;
 
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 
@@ -27,12 +30,18 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 
 Route::get('/orders', [OrdersController::class, 'index'])->name('commandes.orders');
-// Route::get('/client', [ClientController::class, 'index'])->name('client.client');
+Route::get('/client', [ClientController::class, 'index'])->name('client.client');
 Route::get('/products', [ProductController::class, 'index'])->name('produits.produit');
 Route::get('/parametre', [ ParametreController::class, 'index'])->name('parametres.parametre');
-// Route::get('/Blog', [ BlogController::class, 'index'])->name('Blog.bloge');
-// Route::get('/Artisan', [ ArtisanController::class, 'index'])->name('Artisans.artisan');
-// Route::get('/categories-tags', [CategoryTagController::class, 'index'])->name('categories-tags.category-tag');
+
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.category');
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
+Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
 Route::get('/paiements', [PaymentController::class, 'index'])->name('paiements.paiement');
 Route::get('/livraisons', [DeliveryController::class, 'index'])->name('livraisons.livraison');
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.review');

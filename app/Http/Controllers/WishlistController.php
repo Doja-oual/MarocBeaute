@@ -10,7 +10,7 @@ use App\Models\User;
 use App\Models\Wishlist;
 class WishlistController extends Controller
 {
-   public function index(){
+   public function index($id){
     try{
         $user=User::findOrFail($id);
         if($user){
@@ -56,8 +56,9 @@ class WishlistController extends Controller
     try{
         $wishlists= Wishlist::findOrFail($id);
         if($wishlists){
+            $userId = $wishlists->user_id;
             $wishlists->delete();
-            return redirect()->route('wishlist.index', ['id' => auth()->id()])
+            return redirect()->route('wishlist.index', ['id' => $userId])
             ->with('success', 'Product deleted from wishlist');
          }
             else return redirect()->back()

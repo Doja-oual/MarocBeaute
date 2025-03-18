@@ -11,13 +11,18 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('category.index', ['categories' => $categories]);
+        return view('categories.category', ['categories' => $categories]);
     }
 
     public function getCategory_Subcategories()
     {
         $categories = Category::with('sub_categories')->get();
-        return view('category.subcategories', ['categories' => $categories]);
+        return view('categories.subcategories', ['categories' => $categories]);
+    }
+
+    public function create()
+    {
+        return view('categories.create');
     }
 
     public function store(Request $request)
@@ -25,16 +30,41 @@ class CategoryController extends Controller
         try {
             $form = $request->validate([
                 'name' => 'required|string|unique:categories,name',
+                'description' => 'nullable|string',
             ]);
 
             $category = Category::create($form);
 
-            return view('category.index', [
-                'categories' => Category::all(),
-                'success' => 'Catégorie ajoutée avec succès !'
-            ]);
+            return redirect()->route('categories.category')->with('success', 'Catégorie ajoutée avec succès !');
         } catch (Exception $e) {
-            return view('category.error', ['error' => $e->getMessage()]);
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
+    public function edit($id)
+    {
+        try {
+            $category = Category::findOrFail($id);
+            return view('categories.edit', ['category' => $category]);
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $form = $request->validate([
+                'name' => 'required|string|unique:categories,name,' . $id . ',id',
+                'description' => 'nullable|string',
+            ]);
+
+            $category = Category::findOrFail($id);
+            $category->update($form);
+
+            return redirect()->route('categories.category')->with('success', 'Catégorie mise à jour avec succès !');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
         }
     }
 
@@ -44,31 +74,9 @@ class CategoryController extends Controller
             $category = Category::findOrFail($id);
             $category->delete();
 
-            return view('category.index', [
-                'categories' => Category::all(),
-                'success' => 'Catégorie supprimée avec succès.'
-            ]);
+            return redirect()->route('categories.category')->with('success', 'Catégorie supprimée avec succès.');
         } catch (Exception $e) {
-            return view('category.error', ['error' => $e->getMessage()]);
-        }
-    }
-
-    public function update(Request $request, $id)
-    {
-        try {
-            $form = $request->validate([
-                'name' => 'required|string|unique:categories,name,' . $id . ',id',
-            ]);
-
-            $category = Category::findOrFail($id);
-            $category->update($form);
-
-            return view('category.index', [
-                'categories' => Category::all(),
-                'success' => 'Catégorie mise à jour avec succès !'
-            ]);
-        } catch (Exception $e) {
-            return view('category.error', ['error' => $e->getMessage()]);
+            return redirect()->back()->with('error', $e->getMessage());
         }
     }
 }
