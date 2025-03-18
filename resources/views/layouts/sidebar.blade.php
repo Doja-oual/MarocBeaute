@@ -7,7 +7,7 @@
         <i>📊</i> <a href="{{ route('dashboard.index') }}">Tableau de bord</a>
     </li>
     <li class="nav-item {{ request()->is('produits*') ? 'active' : '' }}">
-        <i>📦</i> <a href="{{ route('produits.produit') }}">Produits</a>
+        <i>📦</i> <a href="{{ route('produits.index') }}">Produits</a>
     </li>
     <li class="nav-item {{ request()->is('categories*') ? 'active' : '' }}">
         <i>🏷️</i> <a href="{{ route('categories.category') }}">Catégories </a>

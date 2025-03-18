@@ -64,6 +64,14 @@ Route::post('/coupons/verify', [App\Http\Controllers\CouponController::class, 'v
 Route::get('/paiements', [PaymentController::class, 'index'])->name('paiements.paiement');
 Route::get('/livraisons', [DeliveryController::class, 'index'])->name('livraisons.livraison');
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.review');
+// Route pour les product
+Route::get('/products', [ProductController::class, 'index'])->name('produits.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('produits.create');
+Route::post('/products', [ProductController::class, 'store'])->name('produits.store');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('produits.show');
+Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('produits.edit');
+Route::put('/products/{id}', [ProductController::class, 'update'])->name('produits.update');
+Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('produits.destroy');
 
 Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');
 Route::post('/login',[LoginController::class,'login'])->name('login');
