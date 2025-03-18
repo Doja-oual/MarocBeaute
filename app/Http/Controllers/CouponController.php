@@ -45,6 +45,16 @@ class CouponController extends Controller
         }
         }
 
+
+        public function edit($id)
+{
+    try {
+        $coupon = Coupon::findOrFail($id);
+        return view('coupon.edit', ['coupon' => $coupon]);
+    } catch (Exception $e) {
+        return view('coupon.error', ['error' => $e->getMessage()]);
+    }
+}
         public function update(Request $request ,$id){
              try{
                 $form=$request->validate([

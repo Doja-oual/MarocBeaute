@@ -9,8 +9,14 @@
     <li class="nav-item {{ request()->is('produits*') ? 'active' : '' }}">
         <i>📦</i> <a href="{{ route('produits.produit') }}">Produits</a>
     </li>
-    <li class="nav-item {{ request()->is('categories-tags*') ? 'active' : '' }}">
+    <li class="nav-item {{ request()->is('categories*') ? 'active' : '' }}">
         <i>🏷️</i> <a href="{{ route('categories.category') }}">Catégories </a>
+    </li>
+    <li class="nav-item {{ request()->is('sub_categories*') ? 'active' : '' }}">
+        <i>🏷️</i> <a href="{{ route('Sub_categories.index') }}"> Sous_Catégories </a>
+    </li>
+    <li class="nav-item {{ request()->is('coupon*') ? 'active' : '' }}">
+        <i>🏷️</i> <a href="{{ route('coupon.index') }}">Coupon </a>
     </li>
     <li class="nav-item {{ request()->is('commandes*') ? 'active' : '' }}">
         <i>🛒</i> <a href="{{ route('commandes.orders') }}">Commandes</a>

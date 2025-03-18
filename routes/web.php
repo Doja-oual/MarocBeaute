@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CouponController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeliveryController;
@@ -14,7 +15,9 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ParametreController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\ReviewController;
+
 
 
 
@@ -42,6 +45,22 @@ Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('
 Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
+
+// Routes pour les sous-catégories
+Route::get('/sub-categories', [SubCategoryController::class, 'index'])->name('Sub_categories.index');
+Route::get('/sub-categories/create', [SubCategoryController::class, 'create'])->name('Sub_categories.create');
+Route::post('/sub-categories', [SubCategoryController::class, 'store'])->name('Sub_categories.store');
+Route::get('/sub-categories/{id}', [SubCategoryController::class, 'show'])->name('Sub_categories.show');
+Route::get('/sub-categories/{id}/edit', [SubCategoryController::class, 'edit'])->name('Sub_categories.edit');
+Route::put('/sub-categories/{id}', [SubCategoryController::class, 'update'])->name('Sub_categories.update');
+Route::delete('/sub-categories/{id}', [SubCategoryController::class, 'destroy'])->name('Sub_categories.destroy');
+// Route pour les coupon
+Route::get('/coupons', [App\Http\Controllers\CouponController::class, 'index'])->name('coupon.index');
+Route::post('/coupons', [App\Http\Controllers\CouponController::class, 'store'])->name('coupon.store');
+Route::get('/coupons/{id}/edit', [App\Http\Controllers\CouponController::class, 'edit'])->name('coupon.edit');
+Route::put('/coupons/{id}', [App\Http\Controllers\CouponController::class, 'update'])->name('coupon.update');
+Route::delete('/coupons/{id}', [App\Http\Controllers\CouponController::class, 'destroy'])->name('coupon.destroy');
+Route::post('/coupons/verify', [App\Http\Controllers\CouponController::class, 'verify'])->name('coupon.verify');
 Route::get('/paiements', [PaymentController::class, 'index'])->name('paiements.paiement');
 Route::get('/livraisons', [DeliveryController::class, 'index'])->name('livraisons.livraison');
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.review');
