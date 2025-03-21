@@ -17,6 +17,9 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\TagController;
+
+
 
 
 
@@ -45,6 +48,13 @@ Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('
 Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
+//Route pour Tags
+Route::get('/tags', [TagController::class, 'index'])->name('tags.index');
+Route::get('/tags/create', [TagController::class, 'create'])->name('tags.create');
+Route::post('/tags', [TagController::class, 'store'])->name('tags.store');
+Route::get('/tags/{id}/edit', [TagController::class, 'edit'])->name('tags.edit');
+Route::put('/tags/{id}', [TagController::class, 'update'])->name('tags.update');
+Route::delete('/tags/{id}', [TagController::class, 'destroy'])->name('tags.destroy');
 
 // Routes pour les sous-catégories
 Route::get('/sub-categories', [SubCategoryController::class, 'index'])->name('Sub_categories.index');

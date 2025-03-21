@@ -3,170 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmétiques Marocains Traditionnels</title>
-    <style>
-        :root {
-            --beige-background: #E6D8C3;
-            --gold-accent: #B8A078;
-            --dark-green: #4A5F3A;
-            --text-color: #4A4A4A;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background-color: var(--beige-background);
-            color: var(--text-color);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: rgba(230, 216, 195, 0.8);
-        }
-
-        .navbar-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .navbar-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-links a:hover {
-            color: var(--gold-accent);
-        }
-
-        .hero-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px 5%;
-        }
-
-        .hero-content {
-            width: 40%;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            color: var(--dark-green);
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .cta-button {
-            background-color: var(--gold-accent);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #9A8666;
-        }
-
-        .hero-image {
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .product-categories {
-            display: flex;
-            justify-content: space-around;
-            padding: 50px 5%;
-            background-color: rgba(230, 216, 195, 0.5);
-        }
-
-        .category {
-            text-align: center;
-            width: 20%;
-        }
-
-        .category img {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .category h3 {
-            color: var(--dark-green);
-            margin-bottom: 10px;
-        }
-    </style>
+    <title>MOROCCAN COSMETICS - Cosmétiques Naturels</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">Moroccan Cosmetics</div>
-        <div class="navbar-links">
-            <a href="#home">Accueil</a>
-            <a href="#products">Produits</a>
-            <a href="#traditional">Traditionnel</a>
-            <a href="#modern">Moderne</a>
-            <a href="#about">À propos</a>
-            <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>MOROCCAN COSMETICS</h1>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="products.html">Produits</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="panier.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
         </div>
-        <div class="user-actions">
-            <a href="#login">Connexion</a>
-            <a href="#cart">Panier</a>
-        </div>
-    </nav>
+    </header>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Cosmétiques Marocains</h1>
-            <p>
-                Découvrez l'alliance parfaite entre tradition artisanale et innovation moderne. 
-                Nos produits de beauté naturels capturent l'essence des trésors cosmétiques marocains.
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <div class="slide-image">
+                        <img src="https://placehold.co/1200x600/d6c7b6/7d8c75?text=Cosmétiques+Marocains" alt="Cosmétiques Marocains">
+                    </div>
+                    <div class="slide-content">
+                        <div class="container">
+                            <h2>COSMÉTIQUES MAROCAINS</h2>
+                            <h3>TRADITION & NATURE</h3>
+                            <p>Découvrez nos produits cosmétiques naturels, fabriqués à partir d'ingrédients biologiques.</p>
+                            <div class="slide-buttons">
+                                <a href="products.html" class="btn btn-primary">Acheter maintenant</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-image">
+                        <img src="https://placehold.co/1200x600/c19a65/ffffff?text=Huile+d'Argan" alt="Huile d'Argan">
+                    </div>
+                    <div class="slide-content">
+                        <div class="container">
+                            <h2>HUILE D'ARGAN</h2>
+                            <h3>L'OR LIQUIDE DU MAROC</h3>
+                            <p>Riche en vitamine E et en acides gras essentiels, notre huile d'argan bio est pressée à froid.</p>
+                            <div class="slide-buttons">
+                                <a href="product-detail.html" class="btn btn-primary">Découvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-image">
+                        <img src="https://placehold.co/1200x600/7d8c75/ffffff?text=Savon+Noir+Beldi" alt="Savon Noir Beldi">
+                    </div>
+                    <div class="slide-content">
+                        <div class="container">
+                            <h2>SAVON NOIR BELDI</h2>
+                            <h3>RITUEL HAMMAM AUTHENTIQUE</h3>
+                            <p>Exfoliant naturel à base d'olives noires, idéal pour préparer la peau au gommage.</p>
+                            <div class="slide-buttons">
+                                <a href="product-detail.html" class="btn btn-primary">Découvrir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="slider-arrow prev" id="prevSlide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-dots" id="sliderDots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button class="slider-arrow next" id="nextSlide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories with Images -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Nos Collections</h2>
+            <div class="section-divider"></div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://placehold.co/400x400/d6c7b6/7d8c75?text=Traditionnels" alt="Produits Traditionnels">
+                    </div>
+                    <h3 class="category-title">TRADITIONNELS</h3>
+                    <p class="category-desc">Produits ancestraux aux recettes authentiques</p>
+                    <a href="products.html" class="category-link">Découvrir</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://placehold.co/400x400/c19a65/ffffff?text=Modernes" alt="Produits Modernes">
+                    </div>
+                    <h3 class="category-title">MODERNES</h3>
+                    <p class="category-desc">Formules innovantes aux actifs naturels</p>
+                    <a href="products.html" class="category-link">Découvrir</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="https://placehold.co/400x400/7d8c75/ffffff?text=Coffrets" alt="Coffrets Cadeaux">
+                    </div>
+                    <h3 class="category-title">COFFRETS</h3>
+                    <p class="category-desc">Ensembles cadeaux et rituels de beauté complets</p>
+                    <a href="products.html" class="category-link">Découvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products with Better Images -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Nos Produits Phares</h2>
+            <div class="section-divider"></div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75?text=Huile+d'Argan" alt="Huile d'Argan Bio">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Huile d'Argan Bio</h3>
+                    <p class="product-price">29,99 €</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/c19a65/ffffff?text=Savon+Ghassoul" alt="Savon au Ghassoul">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Savon au Ghassoul</h3>
+                    <p class="product-price">12,99 €</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/7d8c75/ffffff?text=Huile+de+Nigelle" alt="Huile de Nigelle">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Huile de Nigelle</h3>
+                    <p class="product-price">24,99 €</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75?text=Crème+Aloe+Vera" alt="Crème à l'Aloe Vera">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Crème à l'Aloe Vera</h3>
+                    <p class="product-price">19,99 €</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="products.html" class="btn btn-primary">Voir tous les produits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Pourquoi Choisir Nos Produits</h2>
+            <div class="section-divider"></div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf fa-2x" style="color: var(--color-white);"></i>
+                    </div>
+                    <h3 class="benefit-title">100% Naturel</h3>
+                    <p class="benefit-desc">Ingrédients biologiques et naturels</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart fa-2x" style="color: var(--color-white);"></i>
+                    </div>
+                    <h3 class="benefit-title">Sans Cruauté</h3>
+                    <p class="benefit-desc">Jamais testé sur les animaux</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-recycle fa-2x" style="color: var(--color-white);"></i>
+                    </div>
+                    <h3 class="benefit-title">Éco-responsable</h3>
+                    <p class="benefit-desc">Emballages recyclables et durables</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands fa-2x" style="color: var(--color-white);"></i>
+                    </div>
+                    <h3 class="benefit-title">Artisanal</h3>
+                    <p class="benefit-desc">Fabrication traditionnelle et authentique</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Slider -->
+    <section class="product-showcase">
+        <div class="container">
+            <h2 class="section-title">Nos Meilleures Ventes</h2>
+            <div class="section-divider"></div>
+            
+            <div class="showcase-slider-container">
+                <div class="showcase-slider-track" id="showcaseSliderTrack">
+                    <!-- Product 1 -->
+                    <div class="showcase-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://placehold.co/300x300/d6c7b6/7d8c75?text=Huile+d'Argan" alt="Huile d'Argan Bio">
+                                <div class="product-overlay">
+                                    <a href="product-detail.html" class="btn btn-light">
+                                        <i class="fas fa-eye"></i>
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="product-title">Huile d'Argan Bio</h3>
+                            <p class="product-price">29,99 €</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="showcase-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://placehold.co/300x300/c19a65/ffffff?text=Savon+Noir" alt="Savon Noir Beldi">
+                                <div class="product-overlay">
+                                    <a href="product-detail.html" class="btn btn-light">
+                                        <i class="fas fa-eye"></i>
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="product-title">Savon Noir Beldi</h3>
+                            <p class="product-price">14,99 €</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="showcase-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://placehold.co/300x300/7d8c75/ffffff?text=Eau+de+Rose" alt="Eau de Rose">
+                                <div class="product-overlay">
+                                    <a href="product-detail.html" class="btn btn-light">
+                                        <i class="fas fa-eye"></i>
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="product-title">Eau de Rose</h3>
+                            <p class="product-price">18,99 €</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="showcase-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://placehold.co/300x300/d6c7b6/7d8c75?text=Rhassoul" alt="Masque au Rhassoul">
+                                <div class="product-overlay">
+                                    <a href="product-detail.html" class="btn btn-light">
+                                        <i class="fas fa-eye"></i>
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="product-title">Masque au Rhassoul</h3>
+                            <p class="product-price">16,99 €</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="showcase-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://placehold.co/300x300/c19a65/ffffff?text=Henné+Naturel" alt="Henné Naturel">
+                                <div class="product-overlay">
+                                    <a href="product-detail.html" class="btn btn-light">
+                                        <i class="fas fa-eye"></i>
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="product-title">Henné Naturel</h3>
+                            <p class="product-price">9,99 €</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 6 -->
+                    <div class="showcase-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://placehold.co/300x300/7d8c75/ffffff?text=Gommage" alt="Gommage au Sucre">
+                                <div class="product-overlay">
+                                    <a href="product-detail.html" class="btn btn-light">
+                                        <i class="fas fa-eye"></i>
+                                        Voir détails
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="product-title">Gommage au Sucre</h3>
+                            <p class="product-price">21,99 €</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Showcase Slider Controls -->
+                <button class="showcase-arrow prev" id="prevShowcase">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="showcase-arrow next" id="nextShowcase">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Restez Informé</h2>
+            <p class="newsletter-desc">
+                Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives et nos conseils beauté.
             </p>
-            <a href="#products" class="cta-button">Découvrir Maintenant</a>
-        </div>
-        <div class="hero-image">
-            <img src="/api/placeholder/500/600" alt="Produits cosmétiques marocains" />
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </form>
         </div>
     </section>
 
-    <section class="product-categories">
-        <div class="category">
-            <img src="/api/placeholder/200/200" alt="Produits Traditionnels" />
-            <h3>Traditionnel</h3>
-            <p>Découvrez nos produits authentiques inspirés des traditions ancestrales.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">MOROCCAN COSMETICS</h3>
+                    <p class="footer-desc">
+                        Des cosmétiques naturels inspirés par la tradition marocaine et respectueux de l'environnement.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="products.html">Produits</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Informations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <address>
+                        <p>123 Rue de la Nature</p>
+                        <p>75000 Paris, France</p>
+                        <p>contact@moroccancosmetics.com</p>
+                        <p>+33 1 23 45 67 89</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> MOROCCAN COSMETICS. Tous droits réservés.</p>
+            </div>
         </div>
-        <div class="category">
-            <img src="/api/placeholder/200/200" alt="Produits Modernes" />
-            <h3>Moderne</h3>
-            <p>Une approche contemporaine de la beauté naturelle.</p>
-        </div>
-        <div class="category">
-            <img src="/api/placeholder/200/200" alt="Kits Combinés" />
-            <h3>Kits Combinés</h3>
-            <p>L'harmonie parfaite entre tradition et innovation.</p>
-        </div>
-    </section>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

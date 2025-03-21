@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huile d'Argan Bio - Cosmétiques Marocains</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>MOROCCAN COSMETICS</h1>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="products.html" class="active">Produits</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="#" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Huile d'Argan Bio</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <a href="products.html">Produits</a>
+                <span>/</span>
+                <span>Huile d'Argan Bio</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-grid">
+                <div class="product-gallery">
+                    <div class="product-thumbnails">
+                        <div class="product-thumbnail active">
+                            <img src="https://placehold.co/80x80/d6c7b6/7d8c75" alt="Huile d'Argan Bio - Vue 1">
+                        </div>
+                        <div class="product-thumbnail">
+                            <img src="https://placehold.co/80x80/d6c7b6/7d8c75" alt="Huile d'Argan Bio - Vue 2">
+                        </div>
+                        <div class="product-thumbnail">
+                            <img src="https://placehold.co/80x80/d6c7b6/7d8c75" alt="Huile d'Argan Bio - Vue 3">
+                        </div>
+                    </div>
+                    <div class="product-main-image">
+                        <img src="https://placehold.co/500x500/d6c7b6/7d8c75" alt="Huile d'Argan Bio">
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <h1>Huile d'Argan Bio</h1>
+                    <p class="product-price-detail">29,99 €</p>
+                    <div class="product-description">
+                        <p>L'huile d'argan bio est extraite des fruits de l'arganier, un arbre endémique du Maroc. Riche en vitamine E et en acides gras essentiels, elle est reconnue pour ses propriétés hydratantes, nourrissantes et anti-âge.</p>
+                        <p>Notre huile d'argan est 100% pure, pressée à froid et certifiée biologique. Elle convient parfaitement pour le soin du visage, des cheveux et du corps.</p>
+                    </div>
+                    
+                    <div class="product-meta">
+                        <div class="product-meta-item">
+                            <span class="meta-label">Contenance:</span>
+                            <span>50ml</span>
+                        </div>
+                        <div class="product-meta-item">
+                            <span class="meta-label">Origine:</span>
+                            <span>Maroc</span>
+                        </div>
+                        <div class="product-meta-item">
+                            <span class="meta-label">Catégorie:</span>
+                            <span>Huiles</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-quantity">
+                        <span class="quantity-label">Quantité:</span>
+                        <div class="quantity-input">
+                            <button class="quantity-btn" id="decreaseQuantity">-</button>
+                            <input type="number" class="quantity-value" value="1" min="1" max="10">
+                            <button class="quantity-btn" id="increaseQuantity">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-shopping-bag"></i>
+                            Ajouter au panier
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-heart"></i>
+                            Ajouter aux favoris
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Produits Similaires</h2>
+            <div class="section-divider"></div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75" alt="Huile de Nigelle">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Huile de Nigelle</h3>
+                    <p class="product-price">24,99 €</p>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75" alt="Huile de Figue de Barbarie">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Huile de Figue de Barbarie</h3>
+                    <p class="product-price">34,99 €</p>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75" alt="Beurre de Karité">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Beurre de Karité</h3>
+                    <p class="product-price">15,99 €</p>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75" alt="Huile de Jojoba">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Huile de Jojoba</h3>
+                    <p class="product-price">22,99 €</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Restez Informé</h2>
+            <p class="newsletter-desc">
+                Inscrivez-vous à notre newsletter pour recevoir nos offres exclusives et nos conseils beauté.
+            </p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">MOROCCAN COSMETICS</h3>
+                    <p class="footer-desc">
+                        Des cosmétiques naturels inspirés par la tradition marocaine et respectueux de l'environnement.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="products.html">Produits</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Informations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <address>
+                        <p>123 Rue de la Nature</p>
+                        <p>75000 Paris, France</p>
+                        <p>contact@moroccancosmetics.com</p>
+                        <p>+33 1 23 45 67 89</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> MOROCCAN COSMETICS. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Product gallery functionality
+        const thumbnails = document.querySelectorAll('.product-thumbnail');
+        const mainImage = document.querySelector('.product-main-image img');
+        
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                // Remove active class from all thumbnails
+                thumbnails.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked thumbnail
+                thumbnail.classList.add('active');
+                
+                // Update main image
+                const thumbnailImg = thumbnail.querySelector('img');
+                mainImage.src = thumbnailImg.src.replace('80x80', '500x500');
+            });
+        });
+        
+        // Quantity functionality
+        const decreaseBtn = document.getElementById('decreaseQuantity');
+        const increaseBtn = document.getElementById('increaseQuantity');
+        const quantityInput = document.querySelector('.quantity-value');
+        
+        decreaseBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value > 1) {
+                quantityInput.value = value - 1;
+            }
+        });
+        
+        increaseBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value < 10) {
+                quantityInput.value = value + 1;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -91,7 +91,7 @@
                             @enderror
                         </div>
                         
-                        <div class="form-group col-md-6">
+                    <div class="form-group col-md-6">
                             <label for="id_sub_catg">Sous-catégorie <span class="text-danger">*</span></label>
                             <select name="id_sub_catg" id="id_sub_catg" class="form-control @error('id_sub_catg') is-invalid @enderror" required>
                                 <option value="">Sélectionner une sous-catégorie</option>
@@ -106,6 +106,29 @@
                             @enderror
                         </div>
                     </div>
+<div class="form-group">
+    <label for="tags">Tags</label>
+    <select name="tags[]" id="tags" class="form-control select2" multiple>   
+    @foreach($tags as $tag)
+            <option value="{{ $tag->id }}"
+                @if(in_array($tag->id, old('tags', []))) selected @endif>
+                {{ $tag->nom }}
+            </option>
+        @endforeach
+    </select>
+    <small class="form-text text-muted">Vous pouvez sélectionner plusieurs tags en maintenant la touche Ctrl enfoncée.</small>
+</div>
+
+        
+<div class="form-group">
+    <label for="status">Statut</label>
+    <select name="status" id="status" class="form-control">
+        <option value="draft" @if(old('status', $product->status ?? 'draft') == 'draft') selected @endif>Ébauche</option>
+        <option value="published" @if(old('status', $product->status ?? 'draft') == 'published') selected @endif>Publié</option>
+        <option value="archived" @if(old('status', $product->status ?? 'draft') == 'archived') selected @endif>Archivé</option>
+    </select>
+</div>
+
                     
                     <div class="form-group">
                         <div class="custom-control custom-switch">

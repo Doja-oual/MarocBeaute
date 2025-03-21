@@ -15,6 +15,9 @@
     <li class="nav-item {{ request()->is('sub_categories*') ? 'active' : '' }}">
         <i>🏷️</i> <a href="{{ route('Sub_categories.index') }}"> Sous_Catégories </a>
     </li>
+    <li class="nav-item {{ request()->is('tags*') ? 'active' : '' }}">
+        <i>🏷️</i> <a href="{{ route('tags.index') }}"> Tags </a>
+    </li>
     <li class="nav-item {{ request()->is('coupon*') ? 'active' : '' }}">
         <i>🏷️</i> <a href="{{ route('coupon.index') }}">Coupon </a>
     </li>

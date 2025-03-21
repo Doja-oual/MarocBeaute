@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier - Cosmétiques Marocains</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>MOROCCAN COSMETICS</h1>
+                </div>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="products.html">Produits</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="panier.html" class="cart-icon active">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Votre Panier</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Panier</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-container">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th class="product-col">Produit</th>
+                                <th class="price-col">Prix</th>
+                                <th class="quantity-col">Quantité</th>
+                                <th class="subtotal-col">Sous-total</th>
+                                <th class="remove-col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Cart Item 1 -->
+                            <tr class="cart-item">
+                                <td class="product-col">
+                                    <div class="product-info">
+                                        <img src="https://placehold.co/80x80/d6c7b6/7d8c75" alt="Huile d'Argan Bio" class="product-thumbnail">
+                                        <div>
+                                            <h3 class="product-title">Huile d'Argan Bio</h3>
+                                            <p class="product-variant">50ml</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-col">29,99 €</td>
+                                <td class="quantity-col">
+                                    <div class="quantity-input">
+                                        <button class="quantity-btn decrease-btn">-</button>
+                                        <input type="number" class="quantity-value" value="1" min="1" max="10">
+                                        <button class="quantity-btn increase-btn">+</button>
+                                    </div>
+                                </td>
+                                <td class="subtotal-col">29,99 €</td>
+                                <td class="remove-col">
+                                    <button class="remove-btn">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Cart Item 2 -->
+                            <tr class="cart-item">
+                                <td class="product-col">
+                                    <div class="product-info">
+                                        <img src="https://placehold.co/80x80/d6c7b6/7d8c75" alt="Savon au Ghassoul" class="product-thumbnail">
+                                        <div>
+                                            <h3 class="product-title">Savon au Ghassoul</h3>
+                                            <p class="product-variant">100g</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-col">12,99 €</td>
+                                <td class="quantity-col">
+                                    <div class="quantity-input">
+                                        <button class="quantity-btn decrease-btn">-</button>
+                                        <input type="number" class="quantity-value" value="2" min="1" max="10">
+                                        <button class="quantity-btn increase-btn">+</button>
+                                    </div>
+                                </td>
+                                <td class="subtotal-col">25,98 €</td>
+                                <td class="remove-col">
+                                    <button class="remove-btn">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Cart Item 3 -->
+                            <tr class="cart-item">
+                                <td class="product-col">
+                                    <div class="product-info">
+                                        <img src="https://placehold.co/80x80/d6c7b6/7d8c75" alt="Eau de Rose" class="product-thumbnail">
+                                        <div>
+                                            <h3 class="product-title">Eau de Rose</h3>
+                                            <p class="product-variant">200ml</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-col">18,99 €</td>
+                                <td class="quantity-col">
+                                    <div class="quantity-input">
+                                        <button class="quantity-btn decrease-btn">-</button>
+                                        <input type="number" class="quantity-value" value="1" min="1" max="10">
+                                        <button class="quantity-btn increase-btn">+</button>
+                                    </div>
+                                </td>
+                                <td class="subtotal-col">18,99 €</td>
+                                <td class="remove-col">
+                                    <button class="remove-btn">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="cart-actions">
+                        <div class="coupon">
+                            <input type="text" placeholder="Code promo" class="coupon-input">
+                            <button class="btn btn-outline">Appliquer</button>
+                        </div>
+                        <button class="btn btn-outline update-cart">Mettre à jour le panier</button>
+                    </div>
+                </div>
+                
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h2 class="summary-title">Récapitulatif de la commande</h2>
+                    
+                    <div class="summary-row">
+                        <span>Sous-total</span>
+                        <span>74,96 €</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Livraison</span>
+                        <span>5,90 €</span>
+                    </div>
+                    
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>80,86 €</span>
+                    </div>
+                    
+                    <div class="shipping-options">
+                        <h3>Mode de livraison</h3>
+                        <div class="shipping-option">
+                            <input type="radio" id="standard" name="shipping" checked>
+                            <label for="standard">Standard (3-5 jours) - 5,90 €</label>
+                        </div>
+                        <div class="shipping-option">
+                            <input type="radio" id="express" name="shipping">
+                            <label for="express">Express (1-2 jours) - 9,90 €</label>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary checkout-btn">
+                        Procéder au paiement
+                    </button>
+                    
+                    <a href="products.html" class="continue-shopping">
+                        <i class="fas fa-arrow-left"></i>
+                        Continuer mes achats
+                    </a>
+                    
+                    <div class="payment-methods">
+                        <p>Nous acceptons:</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- You May Also Like -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Vous aimerez aussi</h2>
+            <div class="section-divider"></div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75" alt="Masque au Rhassoul">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Masque au Rhassoul</h3>
+                    <p class="product-price">16,99 €</p>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75" alt="Gommage au Sucre">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Gommage au Sucre</h3>
+                    <p class="product-price">21,99 €</p>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75" alt="Huile de Figue de Barbarie">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Huile de Figue de Barbarie</h3>
+                    <p class="product-price">34,99 €</p>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x300/d6c7b6/7d8c75" alt="Savon Noir Beldi">
+                        <div class="product-overlay">
+                            <a href="product-detail.html" class="btn btn-light">
+                                <i class="fas fa-eye"></i>
+                                Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Savon Noir Beldi</h3>
+                    <p class="product-price">14,99 €</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">MOROCCAN COSMETICS</h3>
+                    <p class="footer-desc">
+                        Des cosmétiques naturels inspirés par la tradition marocaine et respectueux de l'environnement.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="products.html">Produits</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Informations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <address>
+                        <p>123 Rue de la Nature</p>
+                        <p>75000 Paris, France</p>
+                        <p>contact@moroccancosmetics.com</p>
+                        <p>+33 1 23 45 67 89</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> MOROCCAN COSMETICS. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Cart quantity buttons functionality
+        const decreaseBtns = document.querySelectorAll('.decrease-btn');
+        const increaseBtns = document.querySelectorAll('.increase-btn');
+        const quantityInputs = document.querySelectorAll('.quantity-value');
+        const removeBtns = document.querySelectorAll('.remove-btn');
+        
+        // Decrease quantity
+        decreaseBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                let value = parseInt(quantityInputs[index].value);
+                if (value > 1) {
+                    quantityInputs[index].value = value - 1;
+                    updateCartItem(index);
+                }
+            });
+        });
+        
+        // Increase quantity
+        increaseBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                let value = parseInt(quantityInputs[index].value);
+                if (value < 10) {
+                    quantityInputs[index].value = value + 1;
+                    updateCartItem(index);
+                }
+            });
+        });
+        
+        // Remove item
+        removeBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                const cartItem = btn.closest('.cart-item');
+                cartItem.style.opacity = '0';
+                setTimeout(() => {
+                    cartItem.remove();
+                    updateCartTotal();
+                    
+                    // Update cart count
+                    const cartCount = document.querySelector('.cart-count');
+                    cartCount.textContent = document.querySelectorAll('.cart-item').length;
+                    
+                    // Show empty cart message if no items left
+                    if (document.querySelectorAll('.cart-item').length === 0) {
+                        const cartTable = document.querySelector('.cart-table');
+                        const emptyCart = document.createElement('div');
+                        emptyCart.className = 'empty-cart';
+                        emptyCart.innerHTML = `
+                            <i class="fas fa-shopping-bag fa-3x"></i>
+                            <h3>Votre panier est vide</h3>
+                            <p>Découvrez nos produits et ajoutez-les à votre panier</p>
+                            <a href="products.html" class="btn btn-primary">Voir les produits</a>
+                        `;
+                        cartTable.replaceWith(emptyCart);
+                        
+                        // Hide cart actions and summary
+                        document.querySelector('.cart-actions').style.display = 'none';
+                        document.querySelector('.cart-summary').style.display = 'none';
+                    }
+                }, 300);
+            });
+        });
+        
+        // Update cart item subtotal
+        function updateCartItem(index) {
+            const cartItems = document.querySelectorAll('.cart-item');
+            const item = cartItems[index];
+            const price = parseFloat(item.querySelector('.price-col').textContent.replace('€', '').replace(',', '.'));
+            const quantity = parseInt(item.querySelector('.quantity-value').value);
+            const subtotal = price * quantity;
+            
+            item.querySelector('.subtotal-col').textContent = subtotal.toFixed(2).replace('.', ',') + ' €';
+            
+            updateCartTotal();
+        }
+        
+        // Update cart total
+        function updateCartTotal() {
+            const subtotals = document.querySelectorAll('.subtotal-col');
+            let total = 0;
+            
+            subtotals.forEach(subtotal => {
+                total += parseFloat(subtotal.textContent.replace('€', '').replace(',', '.'));
+            });
+            
+            const shippingCost = document.getElementById('standard').checked ? 5.90 : 9.90;
+            const finalTotal = total + shippingCost;
+            
+            document.querySelector('.summary-row:first-child span:last-child').textContent = total.toFixed(2).replace('.', ',') + ' €';
+            document.querySelector('.summary-row:nth-child(2) span:last-child').textContent = shippingCost.toFixed(2).replace('.', ',') + ' €';
+            document.querySelector('.total span:last-child').textContent = finalTotal.toFixed(2).replace('.', ',') + ' €';
+        }
+        
+        // Shipping option change
+        const shippingOptions = document.querySelectorAll('input[name="shipping"]');
+        shippingOptions.forEach(option => {
+            option.addEventListener('change', updateCartTotal);
+        });
+        
+        // Update cart button
+        document.querySelector('.update-cart').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show update confirmation
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = 'Panier mis à jour';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
