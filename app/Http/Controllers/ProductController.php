@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Repositories\ProductRepositorieInterface;
 use App\Http\Requests\ProductRequest;
+use App\Models\Tag;
 use App\Models\Product;
 use Exception;
 use Illuminate\Http\Request;
@@ -22,12 +23,11 @@ class ProductController extends Controller
     protected function getCategories()
 {
     try {
-        // Récupérer toutes les catégories
+       
         $categories = \App\Models\Category::all();
         
-        // Vérifier si des catégories ont été trouvées
+        
         if ($categories->isEmpty()) {
-            // Retourner une collection vide ou null si aucune catégorie n'est trouvée
             return collect();
         }
         
@@ -51,8 +51,9 @@ class ProductController extends Controller
     }
 
     public function create(){
+        $tags =\App\Models\Tag::all();
         $sub_categories = \App\Models\Sub_Category::all();
-        return view('produits.create', compact('sub_categories'));
+        return view('produits.create', compact('sub_categories','tags'));
     }
 
     public function store(ProductRequest $request){
@@ -73,8 +74,13 @@ class ProductController extends Controller
                     $form['in_stock'] = false;
                 }
             }
+            $form['status'] = $request->input('status', 'draft');
             
             $product = $this->ProductRepositorieInterface->create($form);
+            // dd($request->all());
+            if ($request->has('tags') && is_array($request->tags)) {
+                $product->tags()->sync($request->tags);
+            }
             return redirect()->route('produits.index')
                 ->with('success', 'Product "' . $product->title . '" created successfully');
         } catch(Exception $e){
@@ -84,8 +90,9 @@ class ProductController extends Controller
 
 
      public function edit($id){
+        $tags = Tag::all();
         $product=Product::findOrFail($id);
-        return view('produits.edit',compact('product'));
+        return view('produits.edit',compact('product','tags'));
      }
 
      public function update(Request $request, $id)
@@ -124,8 +131,11 @@ class ProductController extends Controller
                      $form['in_stock'] = false;
                  }
              }
- 
+             $form['status'] = $request->input('status', 'draft');
              $this->ProductRepositorieInterface->update($id, $form);
+             if ($request->has('tags')) {
+                $product->tags()->sync($request->tags);
+            }
              
              return redirect()->route('produits.index')
                  ->with('success', 'Product updated successfully');

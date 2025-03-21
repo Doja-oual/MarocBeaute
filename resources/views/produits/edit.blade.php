@@ -100,6 +100,28 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="form-group">
+                       <label for="tags">Tags</label>
+                            <select name="tags[]" id="tags" class="form-control" multiple>
+                        @foreach($tags as $tag)
+                                <option value="{{ $tag->id }}" 
+                            @if(in_array($tag->id, old('tags', $product->tags->pluck('id')->toArray())) ) 
+                           selected 
+                             @endif>
+                                     {{ $tag->nom }}
+                         </option>
+                       @endforeach
+                     </select>
+        </div>
+        <div class="form-group">
+    <label for="status">Statut</label>
+    <select name="status" id="status" class="form-control">
+        <option value="draft" @if(old('status', $product->status ?? 'draft') == 'draft') selected @endif>Ébauche</option>
+        <option value="published" @if(old('status', $product->status ?? 'draft') == 'published') selected @endif>Publié</option>
+        <option value="archived" @if(old('status', $product->status ?? 'draft') == 'archived') selected @endif>Archivé</option>
+    </select>
+</div>
+
                     
                     <div class="form-group">
                         <div class="custom-control custom-switch">
@@ -120,7 +142,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Aperçu de l'image
+           
             const imageInput = document.getElementById('image');
             const imagePreview = document.getElementById('image-preview');
             const fileLabel = document.querySelector('.custom-file-label');
@@ -137,7 +159,7 @@
                     reader.readAsDataURL(this.files[0]);
                     fileLabel.textContent = this.files[0].name;
                 } else {
-                    // Si pas de nouvelle image, afficher l'image existante
+                   
                     imagePreview.src = "{{ asset('images/products/' . $product->image) }}";
                     fileLabel.textContent = 'Choisir une image';
                 }

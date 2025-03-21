@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Tag;
 
 class Product extends Model
 {
@@ -19,6 +20,7 @@ class Product extends Model
         'qte_order',
         'in_stock',
         'id_sub_catg',
+        'status',
      ];
 
      public function sub_category(){
@@ -32,6 +34,6 @@ class Product extends Model
      }
 
      public function tags(){
-      return $this->belongsToMany(Tag::class,'produit_tag');
+      return $this->belongsToMany(Tag::class,'produit_tag', 'produit_id');
      }
 }
